@@ -1,29 +1,6 @@
-function buscaBinaria(listaDeNomes, nome) {
-    let attempt = 1
-    let baixo = 0;
-    let alto = listaDeNomes.length - 1;
-
-    while (baixo <= alto) {
-        let meio = Math.floor((baixo + alto) / 2);
-        let aposta = listaDeNomes[meio];
-
-        if (aposta === nome) {
-            console.log(`Foram necessários ${attempt} palpites até encontrar o nome ${nome}`);
-            return meio;
-        }
-
-        attempt += 1
-
-        if (meio > listaDeNomes.indexOf(nome, baixo)) {
-            alto = meio - 1;
-        } else {
-            baixo = meio + 1;
-        }
-    }
-    return -1;
-}
-
-listaDeNomes = [
+var tentativa = 1;
+var esquerda = 0;
+var nomes = [
     "Alice", "Ana", "André", "Antônio", "Beatriz", "Bernardo", "Bianca", "Bruno",
     "Camila", "Carlos", "Carolina", "Cauã", "Cecília", "César", "Clara", "Daniel",
     "Daniela", "Davi", "Débora", "Diego", "Eduardo", "Elena", "Elias", "Emily",
@@ -42,4 +19,23 @@ listaDeNomes = [
     "Marcela", "Matheus", "Mirella", "Nathan", "Nathalia", "Osvaldo", "Patrícia", "Paulo",
     "Priscila"
 ];
-console.log(buscaBinaria(listaDeNomes, "Amanda"));
+function buscaBinaria(nomes, nome) {
+    var direita = nomes.length - 1;
+    while (esquerda <= direita) {
+        var meio = Math.floor((esquerda + direita) / 2);
+        var aposta = nomes[meio];
+        if (aposta === nome) {
+            console.log("Foram necess\u00E1rios ".concat(tentativa, " palpites at\u00E9 encontrar o nome ").concat(nome));
+            return meio;
+        }
+        tentativa += 1;
+        if (meio > nomes.indexOf(nome, esquerda)) {
+            direita = meio - 1;
+        }
+        else {
+            esquerda = meio + 1;
+        }
+    }
+    return -1;
+}
+buscaBinaria(nomes, "Paulo");

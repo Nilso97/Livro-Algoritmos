@@ -1,0 +1,22 @@
+{
+  "name": "algoritmos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nilso97/Livro-Algoritmos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nilso97/Livro-Algoritmos/issues"
+  },
+  "homepage": "https://github.com/Nilso97/Livro-Algoritmos#readme"
+}
