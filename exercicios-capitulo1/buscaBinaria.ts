@@ -41,4 +41,4 @@ function buscaBinaria(nomes: string[], nome: string): number {
     return -1;
 }
 
-buscaBinaria(nomes, "Paulo");
+buscaBinaria(nomes, "Mateus");

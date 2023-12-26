@@ -38,4 +38,4 @@ function buscaBinaria(nomes, nome) {
     }
     return -1;
 }
-buscaBinaria(nomes, "Paulo");
+buscaBinaria(nomes, "Mateus");
