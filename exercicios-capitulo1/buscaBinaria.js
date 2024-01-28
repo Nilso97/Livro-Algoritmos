@@ -1,3 +1,4 @@
+"use strict";
 var tentativa = 1;
 var esquerda = 0;
 var nomes = [
@@ -20,12 +21,12 @@ var nomes = [
     "Priscila"
 ];
 function buscaBinaria(nomes, nome) {
-    var direita = nomes.length - 1;
+    let direita = nomes.length - 1;
     while (esquerda <= direita) {
-        var meio = Math.floor((esquerda + direita) / 2);
-        var aposta = nomes[meio];
+        let meio = Math.floor((esquerda + direita) / 2);
+        let aposta = nomes[meio];
         if (aposta === nome) {
-            console.log("Foram necess\u00E1rios ".concat(tentativa, " palpites at\u00E9 encontrar o nome ").concat(nome));
+            console.log(`Foram necessários ${tentativa} palpites até encontrar o nome ${nome}`);
             return meio;
         }
         tentativa += 1;
