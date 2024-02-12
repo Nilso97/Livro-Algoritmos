@@ -1,0 +1,42 @@
+var algorithm = function (arr) {
+    for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+        if (arr[i] <= 1) {
+            return;
+        }
+    }
+};
+console.time();
+algorithm([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
+console.timeEnd();
+var printFirstItem = function (items) {
+    console.log(items[0]); // O(1)
+    for (var i = 0; i < items.length; i++) { // O(n)
+        console.log(items[i]);
+    }
+    for (var i = items.length - 1; i >= 0; i--) { // O(n)
+        console.log(items[i]);
+    }
+};
+console.time();
+printFirstItem(["John", "Doe", "Mike"]);
+console.timeEnd();
+var findElementMatrix = function (matrix, target) {
+    var rows = matrix.length;
+    var column = matrix[0].length;
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < column; j++) {
+            if (matrix[i][j] === target) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
+console.time();
+var existsElement = findElementMatrix([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+], 10);
+console.timeEnd();
