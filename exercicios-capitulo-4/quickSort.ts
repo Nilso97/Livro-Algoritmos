@@ -1,27 +1,24 @@
 function quickSort(arr: number[]): number[] {
-  let subArrayMinors: number[] = [];
-  let subArrayMajors: number[] = [];
+  let subMinorsArr: number[] = [];
+  let subMajorsArr: number[] = [];
+  let pivot: number = arr[arr.length - 1]; // último elemento do vetor
+
+  // [ menores | maiores ]
 
   if (arr.length < 2) return arr;
 
-  let pivot: number = arr[1]; // O pivô será o número 5
-
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      subArrayMinors.push(arr[i]);
-    }
-    if (arr[i] > pivot) {
-      subArrayMajors.push(arr[i]);
-    }
+    if (arr[i] < pivot) subMinorsArr.push(arr[i]);
+    if (arr[i] > pivot) subMajorsArr.push(arr[i]);
   }
 
   let newArray: number[] = [
-    ...quickSort(subArrayMinors),
+    ...quickSort(subMinorsArr),
     ...[pivot],
-    ...quickSort(subArrayMajors),
+    ...quickSort(subMajorsArr),
   ];
 
   return newArray;
 }
 
-console.log(quickSort([3, 5, 1, 2, 4]));
+console.log(quickSort([4, 7, 2, 6, 4, 5, 9, 1, 8, 3]));
